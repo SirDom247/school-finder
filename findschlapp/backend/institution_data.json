@@ -1,7 +1,7 @@
 [
     {
       "state": "Abia",
-      "": [
+      "institutions": [
         {"name": "Michael Okpara University of Agriculture at Umudike", "ownership": "Federal"},
         {"name": "Abia State University in Uturu", "ownership": "State"},
         {"name": "College of Health Sciences Aba", "ownership": "N/A"},
@@ -16,14 +16,14 @@
     },
     {
       "state": "Adamawa",
-      "": [
+      "institutions": [
         {"name": "Adamawa State polytechnic, Yola", "ownership": "State"},
         {"name": "Adamawa State University, Mubi", "ownership": "State"}
       ]
     },
     {
       "state": "Anambra",
-      "universities": [
+      "institutions": [
         {"name": "Anambra State University, Anambra", "ownership": "State"},
         {"name": "Nnamdi Azikiwe University", "ownership": "Federal"},
         {"name": "the Federal Polytechnic, Oko", "ownership": "Federal"},
@@ -35,7 +35,7 @@
     },
     {
       "state": "Akwa Ibom",
-      "universities": [
+      "institutions": [
         {"name": "University of Uyo", "ownership": "Federal"},
         {"name": "Maritime Academy of Nigeria, Oron", "ownership": "Federal"},
         {"name": "Akwa Ibom State University [Oruk Anam LGA And Mkpat Enin LGA]", "ownership": "State"},
@@ -54,7 +54,7 @@
     },
     {
       "state": "Bauchi",
-      "universities": [
+      "institutions": [
         {"name": "Abubakar Tafawa Balewa University", "ownership": "Federal"},
         {"name": "Federal Polytechnic, Bauchi", "ownership": "Federal"},
         {"name": "FGGC Bauchi", "ownership": "Federal"},
@@ -65,7 +65,7 @@
     },
     {
       "state": "Bayelsa",
-      "universities": [
+      "institutions": [
         {"name": "Bayelsa State College of Health Technology", "ownership": "State"},
         {"name": "Federal Polytechnic, Ekowe", "ownership": "Federal"},
         {"name": "Federal University, Otueke", "ownership": "Federal"},
@@ -76,7 +76,7 @@
     },
     {
       "state": "Benue",
-      "universities": [
+      "institutions": [
         {"name": "Federal University of Agriculture, Makurdi", "ownership": "Federal"},
         {"name": "Benue State University, Makurdi", "ownership": "State"},
         {"name": "University of Mkar, Mkar, Gboko.", "ownership": "Private"},
@@ -90,7 +90,7 @@
     },
     {
       "state": "Borno",
-      "universities": [
+      "institutions": [
         {"name": "College of Education Waka-Biu", "ownership": "State"},
         {"name": "Federal Training Centre, Maiduguri", "ownership": "Federal"},
         {"name": "Federal University of Maiduguri", "ownership": "Federal"},
@@ -103,7 +103,7 @@
     },
     {
       "state": "Cross River",
-      "universities": [
+      "institutions": [
         {"name": "University of Calabar", "ownership": "Federal"},
         {"name": "Cross River State University of Technology, Calabar", "ownership": "State"},
         {"name": "Ibrahim Babangida College of Agriculture, Obubra", "ownership": "State"},
@@ -114,7 +114,7 @@
     },
     {
       "state": "Delta",
-      "universities": [
+      "institutions": [
         {"name": "Federal University of Petroleum Resources, Effurun", "ownership": "Federal"},
         {"name": "Delta State University (Abraka Campus, Oleh Campus, Asaba Campus)", "ownership": "State"},
         {"name": "Delta State Polytechnic, Ogwashi-Uku", "ownership": "State"},
@@ -145,7 +145,7 @@
     },
     {
       "state": "Ebonyi",
-      "universities": [
+      "institutions": [
         {"name": "Ebonyi State University, Abakaliki (EBSU)", "ownership": "State"},
         {"name": "Federal University Ndufu Alike Ikwo (FUNAI)", "ownership": "Federal"},
         {"name": "Ebonyi State College of Education Ikwo (EBSCOEI)", "ownership": "State"},
@@ -156,7 +156,7 @@
     },
     {
       "state": "Enugu",
-      "universities": [
+      "institutions": [
         {"name": "University of Nigeria, Nsukka", "ownership": "Federal"},
         {"name": "Enugu State University of Science & Technology (ESUT)", "ownership": "State"},
         {"name": "Institute of Management and Technology (IMT)", "ownership": "State"},
@@ -173,7 +173,7 @@
     },      
     { 
         "state" : "Edo",
-        "universities": [
+        "institutions": [
             {"name" : "(ICE) Institute of Continuing Education, Auchi", "ownership" : "State"},
             {"name" : "(MILI) Miracle Invasion Leadership Institute", "ownership" : "Private"},
             {"name" : "(NICPS) Nigerian Institute Of Computer Science And Professional Studies", "ownership" : "Private"},
@@ -198,7 +198,7 @@
     },
     {
         "state" : "Ekiti",
-        "universities": [
+        "institutions": [
             {"name" : "Afe Babalola University", "ownership" : "Private"},
             {"name" : "College of Education,Ikere-Ekiti", "ownership" : "State"},
             {"name" : "Crown Polytechnic Ado Ekiti", "ownership" : "Private"},
@@ -216,7 +216,7 @@
     },
     {
         "state" : "FCT",
-        "universities": [
+        "institutions": [
             {"name" : "African University of Science and Technology", "ownership" : "Private"},
             {"name" : "Baze University", "ownership" : "Private"},
             {"name" : "Nigerian Turkish Nile University", "ownership" : "Private"},
@@ -229,7 +229,7 @@
     },
     {
         "state" : "Gombe",
-        "universities": [
+        "institutions": [
             {"name" : "Federal College of Education (Technical), Gombe", "ownership" : "Federal"},
             {"name" : "Federal University Kashere", "ownership" : "Federal"},
             {"name" : "Gombe State University", "ownership" : "State"},
@@ -241,7 +241,7 @@
     },
     {
         "state" : "Imo",
-        "universities": [
+        "institutions": [
             {"name" : "Alvan Ikoku College of Education", "ownership" : "State"},
             {"name" : "Federal Polytechnic, Nekede", "ownership" : "Federal"},
             {"name" : "Federal University of Technology, Owerri", "ownership" : "Federal"},
@@ -259,7 +259,7 @@
     },
     {
         "state" : "Jigawa",    
-        "universities": [
+        "institutions": [
             {"name" : "Federal University Dutse", "ownership" : "Federal"},
             {"name" : "Jigawa State College of Education, Gumel", "ownership" : "State"},
             {"name" : "Jigawa State Polytechnic, Dutse", "ownership" : "State"},

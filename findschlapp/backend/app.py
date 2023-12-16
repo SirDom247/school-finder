@@ -1,16 +1,18 @@
-# Main Flask application file
 from flask import Flask, request, jsonify
-from flask_pymongo import PyMongo
+from flask_mongoengine import MongoEngine
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/institutions_db'
-mongo = PyMongo(app)
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'institutions_db',
+    'host': 'mongodb://localhost:27017/institutions_db',
+}
 
-# Create the Institution class
-class Institution(mongo.db.Document):
-    name = mongo.db.StringField()
-    state = mongo.db.StringField()
-    ownership = mongo.db.StringField()
+mongo = MongoEngine(app)
+
+class Institution(mongo.Document):
+    name = mongo.StringField()
+    state = mongo.StringField()
+    ownership = mongo.StringField()
 
 # Endpoint to parse JSON and insert into the database
 @app.route('/upload', methods=['POST'])
