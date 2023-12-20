@@ -1,39 +1,24 @@
 from flask import Flask, request, jsonify
 from flask_pymongo import PyMongo
+import json
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/institutions'
-
+app.config['MONGO_URI'] = 'mongodb://localhost:27017/institutions_db'
 mongo = PyMongo(app)
 
-class Institution:
-    def __init__(self, name, state, ownership):
-        self.name = name
-        self.state = state
-        self.ownership = ownership
+# Assuming this is within your Flask app
+file_path = 'institutions_data.json'
 
-# Endpoint to parse JSON and insert into the database
-@app.route('/upload', methods=['POST'])
-def upload_json():
+with open(file_path, 'r') as json_file:
+    institutions_data = json.load(json_file)
+
+# Insert data into MongoDB on startup
+def insert_data_into_mongo():
     try:
-        json_data = request.get_json()
-
-        for institution_data in json_data.get('institutions', []):
-            institution = Institution(
-                name=institution_data.get('name'),
-                state=institution_data.get('state'),
-                ownership=institution_data.get('ownership')
-            )
-            # Insert into MongoDB
-            mongo.db.institutions.insert_one({
-                'name': institution.name,
-                'state': institution.state,
-                'ownership': institution.ownership
-            })
-
-        return jsonify({'message': 'Data uploaded successfully'})
+        mongo.db.institutions.insert_many(institutions_data)
+        print('Data inserted into MongoDB successfully.')
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        print(f'Error inserting data into MongoDB: {str(e)}')
 
 # Endpoint to query institutions based on state
 @app.route('/search', methods=['GET'])
@@ -43,10 +28,36 @@ def search_institutions():
         # Query MongoDB
         institutions = mongo.db.institutions.find({'state': state})
 
-        result = [{'name': inst['name'], 'state': inst['state'], 'ownership': inst['ownership']} for inst in institutions]
+        # Process the query results
+        result = [
+            {'name': inst['name'], 'state': inst['state'], 'ownership': inst['ownership']}
+            for inst in institutions
+        ]
+
         return jsonify({'institutions': result})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+# Endpoint to get all institutions from the MongoDB database
+@app.route('/all_institutions', methods=['GET'])
+def get_all_institutions():
+    try:
+        institutions = mongo.db.institutions.find()
+
+        # Process the query results
+        result = [
+            {'name': inst['name'], 'state': inst['state'], 'ownership': inst['ownership']}
+            for inst in institutions
+        ]
+
+        return jsonify({'institutions': result})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# ...
+
+# Insert data into MongoDB on startup
+insert_data_into_mongo()
 
 if __name__ == '__main__':
     app.run(debug=True)
